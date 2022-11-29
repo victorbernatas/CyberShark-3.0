@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         timer = Time.deltaTime;
-        Debug.Log(timer);
+        
         if (timer <= 0)
         {
             SpawnEnemies();
