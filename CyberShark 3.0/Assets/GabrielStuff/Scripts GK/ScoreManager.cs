@@ -23,9 +23,23 @@ public class ScoreManager : MonoBehaviour
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
-    public void AddPoint()
+    public void AddPoint1()
     {
-        score += 1;
+        score += 50;
+        scoreText.text = score.ToString() + " POINTS";
+        if (highscore < score)
+            PlayerPrefs.SetInt("highscore", score);
+    }
+    public void AddPoint2()
+    {
+        score += 100;
+        scoreText.text = score.ToString() + " POINTS";
+        if (highscore < score)
+            PlayerPrefs.SetInt("highscore", score);
+    }
+    public void AddPoint3()
+    {
+        score += 150;
         scoreText.text = score.ToString() + " POINTS";
         if (highscore < score)
             PlayerPrefs.SetInt("highscore", score);
