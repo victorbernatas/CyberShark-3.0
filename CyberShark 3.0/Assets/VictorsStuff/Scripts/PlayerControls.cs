@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
 
     [SerializeField] float impulseMagnitude;
     [SerializeField] float forceMagnitude;
-    [SerializeField] float rotationSpeed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +33,7 @@ public class PlayerControls : MonoBehaviour
         Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>();
         playerRigidBody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * forceMagnitude * Time.deltaTime, ForceMode.Force);
 
-        // This was necessary to add otherwise the console kept printing that the viewing vector is 0 thousands of time
-        if (inputVector != Vector2.zero)
-        {
-            RotateToFaceVelocity();
-        }
-
-        else
-        {
-            playerRigidBody.constraints = RigidbodyConstraints.FreezeRotation;
-        }
-
+       
        
 
     }
@@ -57,26 +47,12 @@ public class PlayerControls : MonoBehaviour
     {
         
         Vector2 inputVector = context.ReadValue<Vector2>();
-        playerRigidBody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * impulseMagnitude * Time.deltaTime, ForceMode.Acceleration);
+        playerRigidBody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * impulseMagnitude * Time.deltaTime, ForceMode.Force);
 
         
     }
 
-    private void RotateToFaceVelocity()
-    {
-        // these lines are for lerping
-        
-       Quaternion targetRotation = Quaternion.LookRotation(playerRigidBody.velocity, Vector3.back);
-        
-        targetRotation.x = 0;
-        targetRotation.z = 0;
 
-
-       // used to multiply by delta.deltaTime instead of 0.1f but it gave me errors if the quaternion equaled 0 (very rarely, but still) don't forget to look into it
-       transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * 0.1f);     
-
-      
-    }
 
 
     private void KeepPlayerOnScreen()
