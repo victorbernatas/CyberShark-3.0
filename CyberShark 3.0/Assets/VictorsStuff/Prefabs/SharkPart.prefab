@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8889387367248218488}
   - component: {fileID: 6270353678354750356}
   - component: {fileID: 9175564388979005053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SharkPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

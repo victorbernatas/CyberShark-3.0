@@ -32,6 +32,7 @@ public class Follow : MonoBehaviour
             //set the new position
             transform.position = follow.position + followToCurrent;
 
+            
             //Determine Which direction to rotate
             Vector3 targetDirection = follow.position - transform.position;
             // the step size is equal to speed * frame rate
