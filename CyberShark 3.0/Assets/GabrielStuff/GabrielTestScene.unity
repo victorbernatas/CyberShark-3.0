@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 326680994, guid: 17468711d9e304e4abc4ec443ba43ad5, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 1144616157}
+      objectReference: {fileID: 0}
     - target: {fileID: 326680994, guid: 17468711d9e304e4abc4ec443ba43ad5, type: 3}
       propertyPath: originColor.b
       value: 0.4847606
@@ -363,9 +363,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9556f6db4e3fe9145b9e384a4b4e2034, type: 3}
+    m_Font: {fileID: 12800000, guid: b79cdc606fceb19488e3da0f752232eb, type: 3}
     m_FontSize: 75
-    m_FontStyle: 1
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10 Points
+  m_Text: 10 POINTS
 --- !u!222 &716122987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -644,11 +644,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016103867}
   m_CullTransparentMesh: 1
---- !u!4 &1144616157 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6797078444769769878, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
-  m_PrefabInstance: {fileID: 860680099}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1243891102
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,9 +915,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9556f6db4e3fe9145b9e384a4b4e2034, type: 3}
+    m_Font: {fileID: 12800000, guid: b79cdc606fceb19488e3da0f752232eb, type: 3}
     m_FontSize: 50
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
@@ -932,7 +927,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Highscore: 50'
+  m_Text: 'HIGHSCORE: 50'
 --- !u!222 &1659428173
 CanvasRenderer:
   m_ObjectHideFlags: 0
