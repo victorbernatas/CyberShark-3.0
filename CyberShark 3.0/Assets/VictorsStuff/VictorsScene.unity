@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19262704, g: 0.23179999, b: 0.65140265, a: 1}
+  m_IndirectSpecularColor: {r: 0.1926277, g: 0.23180068, b: 0.65140414, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,7 +484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 200}
+  m_AnchoredPosition: {x: -130, y: 130}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1016103869
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 100
+  m_MovementRange: 115
   m_ControlPath: <Gamepad>/leftStick
 --- !u!114 &1016103870
 MonoBehaviour:
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f7f3d009509a7fa418de9d679b463c2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -978,6 +978,14 @@ PrefabInstance:
       propertyPath: middlePart
       value: 
       objectReference: {fileID: 1759573277}
+    - target: {fileID: 249343629, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: killCountForBackPart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 249343629, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: killCountForMiddlePart
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 165291387759628853, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
       propertyPath: speed
       value: 200

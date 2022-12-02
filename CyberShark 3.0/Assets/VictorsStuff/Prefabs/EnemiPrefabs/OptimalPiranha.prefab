@@ -373,8 +373,8 @@ MonoBehaviour:
   eastIsOrigin: 0
   dot1: 0
   dot2: 0
-  activatedColor: {r: 0.048843034, g: 0.9245283, b: 0.8692303, a: 0}
-  originColor: {r: 1, g: 0, b: 0.7995286, a: 0}
+  activatedColor: {r: 0.34117648, g: 1, b: 1, a: 0}
+  originColor: {r: 1, g: 0.28235295, b: 0.28235295, a: 0}
   dirToTarget: {x: 0, y: 0, z: 0}
   goingClockwise: 0
   goingCounterClockwise: 0
