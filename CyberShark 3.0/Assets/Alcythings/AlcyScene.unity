@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 326680994, guid: 17468711d9e304e4abc4ec443ba43ad5, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 1144616157}
+      objectReference: {fileID: 0}
     - target: {fileID: 326680994, guid: 17468711d9e304e4abc4ec443ba43ad5, type: 3}
       propertyPath: originColor.b
       value: 0.4847606
@@ -455,6 +455,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1174184058041637072, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: avoid1
+      value: 
+      objectReference: {fileID: 1721384269}
+    - target: {fileID: 2523092293528540215, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: m_Drag
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523092293528540215, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: m_Mass
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3702768674381154726, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
       propertyPath: m_Name
       value: Shark (1)
@@ -507,6 +519,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4797398863423163829, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: forceMagnitude
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797398863423163829, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: impulseMagnitude
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541320894978414973, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: avoid1
+      value: 
+      objectReference: {fileID: 1721384269}
     - target: {fileID: 6797078444769769878, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.56
@@ -762,11 +786,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &1144616157 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6797078444769769878, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
-  m_PrefabInstance: {fileID: 860680099}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1180075724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,18 +1161,36 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1580570721 stripped
+--- !u!4 &1702580812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5443945748699480609, guid: 17468711d9e304e4abc4ec443ba43ad5, type: 3}
+  m_PrefabInstance: {fileID: 88257642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721384269 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 657266659730656500, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5230628573921709303, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
   m_PrefabInstance: {fileID: 860680099}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1580570728
+--- !u!114 &1721384270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580570721}
+  m_GameObject: {fileID: 1721384269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727506cba47ba5c41aaa1c1a4a8f67ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 200
+--- !u!114 &1721384272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721384269}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d851b89c90c8a454e8c2a2716c5ab2f2, type: 3}
@@ -1162,12 +1199,7 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 0
   PlayerHealthBar: {fileID: 1536670745}
-  healthCooldown: 5
---- !u!4 &1702580812 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5443945748699480609, guid: 17468711d9e304e4abc4ec443ba43ad5, type: 3}
-  m_PrefabInstance: {fileID: 88257642}
-  m_PrefabAsset: {fileID: 0}
+  healthCooldown: 0
 --- !u!1 &1754843999
 GameObject:
   m_ObjectHideFlags: 0
