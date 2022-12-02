@@ -15,6 +15,6 @@ public class FollowPath : MonoBehaviour
     {
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-        transform.forward = pathCreator.path.GetPointAtDistance(distanceTravelled);
+        //transform.forward = pathCreator.path.GetPointAtDistance(distanceTravelled);
     }
 }
