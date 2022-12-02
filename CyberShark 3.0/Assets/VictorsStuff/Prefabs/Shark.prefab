@@ -8,11 +8,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2863724268850810545}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.107048444, y: 0.11801844, z: 0.2348486}
-  m_Center: {x: 0.0035226564, y: 0.006857908, z: -0.013540459}
+  m_Size: {x: 0.11990756, y: 0.1147898, z: 0.23484859}
+  m_Center: {x: -0.0029068938, y: 0.005243596, z: -0.013540454}
 --- !u!114 &8145913609696723899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +377,30 @@ PrefabInstance:
     - target: {fileID: 3300735245325908430, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
       propertyPath: m_Name
       value: SharkTail
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426980038108596586, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.06701586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426980038108596586, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.05925721
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426980038108596586, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
+      propertyPath: m_Size.z
+      value: 0.098119974
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426980038108596586, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0006539313
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426980038108596586, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.004495726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426980038108596586, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0056983284
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a7222b51a9546e49968e063babc467a, type: 3}
