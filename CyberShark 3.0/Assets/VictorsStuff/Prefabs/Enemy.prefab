@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3457924288486723480}
   - component: {fileID: 1939550723812550774}
   - component: {fileID: 3104824825038834127}
-  - component: {fileID: 4448649265068533878}
   m_Layer: 0
   m_Name: north sphere
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4448649265068533878
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768844885554667102}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2620787038899918877
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +92,6 @@ GameObject:
   - component: {fileID: 6500846560351196120}
   - component: {fileID: 2467800638626927857}
   - component: {fileID: 9127575913283020464}
-  - component: {fileID: 4242358843340626386}
   m_Layer: 0
   m_Name: east sphere
   m_TagString: Untagged
@@ -177,19 +162,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4242358843340626386
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2620787038899918877}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5443945748699480613
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bad5a5c0ec74aa245aa9dc4da530330a, type: 2}
+  - {fileID: 2100000, guid: 9628b4aaa98f09b40a3734d8611e94a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,10 +294,10 @@ MonoBehaviour:
   dot2: 0
   activatedColor: {r: 1, g: 0.92222625, b: 0, a: 0}
   originColor: {r: 0.9811321, g: 0, b: 0.03393105, a: 0}
-  playerPos: {fileID: 0}
   dirToTarget: {x: 0, y: 0, z: 0}
   goingClockwise: 0
   goingCounterClockwise: 0
+  scoreValue: 1
 --- !u!1 &7086915657908486003
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +309,6 @@ GameObject:
   - component: {fileID: 225224902615521126}
   - component: {fileID: 2759710688100693986}
   - component: {fileID: 5617035657323517332}
-  - component: {fileID: 4629971490419142983}
   m_Layer: 0
   m_Name: south Sphere
   m_TagString: Untagged
@@ -408,19 +379,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4629971490419142983
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086915657908486003}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8609129354511946580
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +390,6 @@ GameObject:
   - component: {fileID: 537435981500275151}
   - component: {fileID: 5168590960976672136}
   - component: {fileID: 1715499685040002760}
-  - component: {fileID: 5189063716379024904}
   m_Layer: 0
   m_Name: west sphere
   m_TagString: Untagged
@@ -503,16 +460,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5189063716379024904
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8609129354511946580}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

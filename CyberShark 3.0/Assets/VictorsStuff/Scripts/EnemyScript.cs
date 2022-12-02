@@ -39,14 +39,14 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private Color activatedColor;
 
-    [SerializeField] private GameObject playerMesh;
+    private SharkManager sharkmanager;
 
     [SerializeField] private Transform playerPos;
     [SerializeField] private Vector3 dirToTarget;
     [SerializeField] private float dot1;
     [SerializeField] private float dot2;
 
-    [SerializeField] private float initialDot;
+   
 
 
 
@@ -56,6 +56,8 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         activatedColor = new Color(1f, 0.5f, 0.5f);
+
+        sharkmanager = new SharkManager();
     }
 
     // Update is called once per frame
@@ -116,7 +118,7 @@ public class EnemyScript : MonoBehaviour
         if (Physics.Raycast(transform.position, northDirection, 100f, playerLayerMask) && northIsOrigin == true && northIsActivated == true && southIsActivated == true && westIsActivated == true && eastIsActivated == true)
 
         {
-            Destroy(this.gameObject);
+            SelfDestroy();
         }
     }
 
@@ -158,7 +160,7 @@ public class EnemyScript : MonoBehaviour
 
         if (Physics.Raycast(transform.position, southDirection, 100f, playerLayerMask) && southIsOrigin == true && northIsActivated == true && southIsActivated == true && westIsActivated == true && eastIsActivated == true)
         {
-            Destroy(this.gameObject);
+            SelfDestroy();
         }
 
 
@@ -207,7 +209,7 @@ public class EnemyScript : MonoBehaviour
 
         if (Physics.Raycast(transform.position, eastDirection, 100f, playerLayerMask) && eastIsOrigin == true && northIsActivated == true && southIsActivated == true && westIsActivated == true && eastIsActivated == true)
         {
-            Destroy(this.gameObject);
+            SelfDestroy();
         }
     }
 
@@ -251,7 +253,7 @@ public class EnemyScript : MonoBehaviour
 
         if (Physics.Raycast(transform.position, westDirection, 100f, playerLayerMask) && westIsOrigin == true && northIsActivated == true && southIsActivated == true && westIsActivated == true && eastIsActivated == true)
         {
-            Destroy(this.gameObject);
+            SelfDestroy();
         }
 
     }
@@ -282,17 +284,10 @@ public class EnemyScript : MonoBehaviour
 
     }
 
-    private void WhichDirection()
+    private void SelfDestroy()
     {
-        if(pointsActivated == 2 && goingClockwise)
-        {
-
-        }
-
-        if(pointsActivated == 2 && goingCounterClockwise)
-        {
-
-        }
+        Destroy(this.gameObject);
+        sharkmanager.AddKill();
 
     }
 

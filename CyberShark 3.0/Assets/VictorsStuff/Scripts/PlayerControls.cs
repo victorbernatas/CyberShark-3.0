@@ -10,15 +10,14 @@ public class PlayerControls : MonoBehaviour
     private Camera mainCamera;
 
 
+
+
     [SerializeField] float impulseMagnitude;
     [SerializeField] float forceMagnitude;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+   
+    
 
     private void Awake()
     {
@@ -84,12 +83,6 @@ public class PlayerControls : MonoBehaviour
 
         transform.position = newPosition;
     }
-
-
-   
-
-   
-
 
 
 }
