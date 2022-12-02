@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayGame : MonoBehaviour
 {
+    [SerializeField] GameObject startMenu;
 
-    
-        public void StartGame()
+    private void Update()
+    {
+        if (startMenu == null)
+        {
+            StartGame();
+        }
+    }
+
+    public void StartGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
