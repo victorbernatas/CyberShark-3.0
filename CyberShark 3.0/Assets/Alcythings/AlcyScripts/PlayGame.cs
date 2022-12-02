@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayGame : MonoBehaviour
 {
 
-    {
+    
         public void StartGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -23,5 +23,5 @@ public class PlayGame : MonoBehaviour
             Application.Quit();
         }
 
-    }
+    
 }
