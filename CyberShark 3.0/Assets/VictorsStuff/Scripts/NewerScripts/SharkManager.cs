@@ -94,6 +94,7 @@ public class SharkManager : MonoBehaviour
             killCount = 0;
             backPartActivated = false;
             Debug.Log("Backpartgone"+ killCount);
+            return;
         }
         if (!backPartActivated && middlePartActivated)
         {
