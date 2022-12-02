@@ -32,14 +32,25 @@ public class SharkDetection : MonoBehaviour
     [SerializeField] private Color activatedColor;
     [SerializeField] private Color originColor;
 
-    [SerializeField] private Transform playerPos;
+    
     [SerializeField] private Vector3 dirToTarget;
 
     [SerializeField] private bool goingClockwise;
     [SerializeField] private bool goingCounterClockwise;
 
+    private Transform playerPos;
+    private SharkManager sharkManager;
 
-  
+    [SerializeField] int scoreValue;
+
+
+
+    private void Awake()
+    {
+        sharkManager = GameObject.Find("Shark").GetComponent<SharkManager>();
+        playerPos = GameObject.Find("SharkHead").GetComponent<Transform>();
+    }
+
     void Update()
     {
         FourDirectionDetectionClockwise();
@@ -67,7 +78,7 @@ public class SharkDetection : MonoBehaviour
 
             if (Physics.Raycast(northRay, 100f, playerLayerMask) && northIsOrigin && eastIsActivated && southIsActivated && westIsActivated)
             {
-                Destroy(gameObject);
+                SelfDestroy();
 
             }
 
@@ -99,7 +110,7 @@ public class SharkDetection : MonoBehaviour
 
             if (Physics.Raycast(eastRay, 100f, playerLayerMask) && eastIsOrigin && southIsActivated && westIsActivated && northIsActivated)
             {
-                Destroy(gameObject);
+                SelfDestroy();
 
             }
 
@@ -130,7 +141,7 @@ public class SharkDetection : MonoBehaviour
 
             if (Physics.Raycast(southRay, 100f, playerLayerMask) && southIsOrigin && westIsActivated && northIsActivated && eastIsActivated)
             {
-                Destroy(gameObject);
+                SelfDestroy();
 
             }
 
@@ -161,8 +172,7 @@ public class SharkDetection : MonoBehaviour
 
             if (Physics.Raycast(westRay, 100f, playerLayerMask) && westIsOrigin && northIsActivated && eastIsActivated && southIsActivated)
             {
-                Destroy(gameObject);
-
+                SelfDestroy();
             }
 
 
@@ -314,6 +324,14 @@ public class SharkDetection : MonoBehaviour
             goingCounterClockwise = false;
         }
         
+    }
+
+
+    void SelfDestroy()
+    {
+        Destroy(this.gameObject);
+        sharkManager.AddKill();
+        sharkManager.AddScore(scoreValue);
     }
 
 }   
