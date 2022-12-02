@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/VictorsStuff/VictorsScene.unity
+    path: Assets/VictorsStuff/StartMenu.unity
     guid: c89f52d0bc83ffe4c89d2ab39116ee9f
-  - enabled: 1
-    path: Assets/Alcythings/GameOver.unity
-    guid: 5da5a2f9cc43f594298870ef79baad6a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
