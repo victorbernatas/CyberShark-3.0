@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2085521599614839868}
   - component: {fileID: 2085521599614839869}
   m_Layer: 0
-  m_Name: OptimalPiranha
+  m_Name: Squarezz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

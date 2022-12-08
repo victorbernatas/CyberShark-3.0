@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SharkDetection : MonoBehaviour
+public class SharkDetection2 : MonoBehaviour
 {
 
     [SerializeField] LayerMask playerLayerMask;
@@ -207,13 +207,9 @@ public class SharkDetection : MonoBehaviour
 
     void DotDetection()
     {
-        if (playerPos != null)
-        {
-            dirToTarget = Vector3.Normalize(playerPos.transform.position - transform.position);
-            dot1 = Vector3.Dot(Vector3.forward, dirToTarget);
-            dot2 = Vector3.Dot(Vector3.right, dirToTarget);
-        }
-       
+        dirToTarget = Vector3.Normalize(playerPos.transform.position - transform.position);
+        dot1 = Vector3.Dot(Vector3.forward, dirToTarget);
+        dot2 = Vector3.Dot(Vector3.right, dirToTarget);
     }
 
     void ColorChange()

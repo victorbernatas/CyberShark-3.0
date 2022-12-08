@@ -21,6 +21,8 @@ public class SharkManager : MonoBehaviour
 
     public TMP_Text scoreText;
 
+    public const string HighScoreKey = "HighScore";
+
 
     void Start()
     {
@@ -49,9 +51,26 @@ public class SharkManager : MonoBehaviour
 
     public void AddScore(int scoreValue)
     {
+        if (scoreText != null)
+        {
+            if (!middlePartActivated && !backPartActivated)
+            {
+                score = score + scoreValue;
+            }
+
+            if (middlePartActivated && !backPartActivated)
+            {
+                score = score + scoreValue * 2;
+            }
+
+            if (middlePartActivated && backPartActivated)
+            {
+                score = score + scoreValue * 4;
+            }
+            score = score + scoreValue;
+            scoreText.text = score.ToString();
+        }
         
-        score = score + scoreValue;
-        scoreText.text = score.ToString();
 
 
     }
@@ -120,6 +139,16 @@ public class SharkManager : MonoBehaviour
         if (hp == 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+
+    private void OnDestroy()
+    {
+        int currentHighScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+        if (score > currentHighScore)
+        {
+            PlayerPrefs.SetInt(HighScoreKey, score);
         }
     }
 }

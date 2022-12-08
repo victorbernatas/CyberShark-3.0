@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SharkDetection : MonoBehaviour
+public class UISharkDetection1 : MonoBehaviour
 {
-
     [SerializeField] LayerMask playerLayerMask;
 
     [SerializeField] GameObject northSphere;
@@ -32,7 +31,7 @@ public class SharkDetection : MonoBehaviour
     [SerializeField] private Color activatedColor;
     [SerializeField] private Color originColor;
 
-    
+
     [SerializeField] private Vector3 dirToTarget;
 
     [SerializeField] private bool goingClockwise;
@@ -56,7 +55,7 @@ public class SharkDetection : MonoBehaviour
         FourDirectionDetectionClockwise();
         ColorChange();
         DotDetection();
-        
+
     }
 
     private void FourDirectionDetectionClockwise()
@@ -96,7 +95,7 @@ public class SharkDetection : MonoBehaviour
 
         }
 
-        
+
 
         #endregion
 
@@ -117,10 +116,10 @@ public class SharkDetection : MonoBehaviour
         }
 
 
-        if (eastIsActivated && !isCurrentlytargeted && dot1 > 0 && dot2 >0 && goingClockwise && !eastIsOrigin)
+        if (eastIsActivated && !isCurrentlytargeted && dot1 > 0 && dot2 > 0 && goingClockwise && !eastIsOrigin)
         {
             eastIsActivated = false;
-           
+
         }
 
         if (eastIsActivated && !isCurrentlytargeted && dot1 < 0 && dot2 > 0 && goingCounterClockwise && !eastIsOrigin)
@@ -129,7 +128,7 @@ public class SharkDetection : MonoBehaviour
 
         }
 
-        
+
 
 
         if (Physics.Raycast(southRay, 100f, playerLayerMask))
@@ -150,7 +149,7 @@ public class SharkDetection : MonoBehaviour
         if (southIsActivated && !isCurrentlytargeted && dot1 < 0 && dot2 > 0 && goingClockwise && !southIsOrigin)
         {
             southIsActivated = false;
-            
+
         }
 
         if (southIsActivated && !isCurrentlytargeted && dot1 < 0 && dot2 < 0 && goingCounterClockwise && !southIsOrigin)
@@ -159,7 +158,7 @@ public class SharkDetection : MonoBehaviour
 
         }
 
-        
+
 
 
 
@@ -181,7 +180,7 @@ public class SharkDetection : MonoBehaviour
         if (westIsActivated && !isCurrentlytargeted && dot1 < 0 && dot2 < 0 && goingClockwise && !westIsOrigin)
         {
             westIsActivated = false;
-          
+
         }
 
         if (westIsActivated && !isCurrentlytargeted && dot1 > 0 && dot2 < 0 && goingCounterClockwise && !westIsOrigin)
@@ -190,9 +189,9 @@ public class SharkDetection : MonoBehaviour
 
         }
 
-        
 
-        if (Physics.Raycast(northRay, 100f, playerLayerMask) || Physics.Raycast(eastRay, 100f, playerLayerMask) || 
+
+        if (Physics.Raycast(northRay, 100f, playerLayerMask) || Physics.Raycast(eastRay, 100f, playerLayerMask) ||
             Physics.Raycast(southRay, 100f, playerLayerMask) || Physics.Raycast(westRay, 100f, playerLayerMask))
         {
             isCurrentlytargeted = true;
@@ -207,13 +206,9 @@ public class SharkDetection : MonoBehaviour
 
     void DotDetection()
     {
-        if (playerPos != null)
-        {
-            dirToTarget = Vector3.Normalize(playerPos.transform.position - transform.position);
-            dot1 = Vector3.Dot(Vector3.forward, dirToTarget);
-            dot2 = Vector3.Dot(Vector3.right, dirToTarget);
-        }
-       
+        dirToTarget = Vector3.Normalize(playerPos.transform.position - transform.position);
+        dot1 = Vector3.Dot(Vector3.forward, dirToTarget);
+        dot2 = Vector3.Dot(Vector3.right, dirToTarget);
     }
 
     void ColorChange()
@@ -250,7 +245,7 @@ public class SharkDetection : MonoBehaviour
             eastSphereRenderer.material.SetColor("_Color", Color.white);
         }
 
-        if (southIsActivated &&!southIsOrigin)
+        if (southIsActivated && !southIsOrigin)
         {
             southSphereRenderer.material.SetColor("_Color", activatedColor);
         }
@@ -281,7 +276,7 @@ public class SharkDetection : MonoBehaviour
 
     void OriginDetection()
     {
-        if(northIsActivated && !eastIsActivated && !southIsActivated && !westIsActivated)
+        if (northIsActivated && !eastIsActivated && !southIsActivated && !westIsActivated)
         {
             northIsOrigin = true;
         }
@@ -306,7 +301,7 @@ public class SharkDetection : MonoBehaviour
 
     void boolCounter()
     {
-        if(northIsOrigin && eastIsActivated && !goingCounterClockwise|| eastIsOrigin && southIsActivated && !goingCounterClockwise || 
+        if (northIsOrigin && eastIsActivated && !goingCounterClockwise || eastIsOrigin && southIsActivated && !goingCounterClockwise ||
             southIsOrigin && westIsActivated && !goingCounterClockwise || westIsOrigin && northIsActivated && !goingCounterClockwise)
         {
             goingClockwise = true;
@@ -317,7 +312,7 @@ public class SharkDetection : MonoBehaviour
             goingClockwise = false;
         }
 
-        if (northIsOrigin && westIsActivated && !goingClockwise|| westIsOrigin && southIsActivated && !goingClockwise || 
+        if (northIsOrigin && westIsActivated && !goingClockwise || westIsOrigin && southIsActivated && !goingClockwise ||
             southIsOrigin && eastIsActivated && !goingClockwise || eastIsOrigin && northIsActivated && !goingClockwise)
         {
             goingCounterClockwise = true;
@@ -327,7 +322,7 @@ public class SharkDetection : MonoBehaviour
         {
             goingCounterClockwise = false;
         }
-        
+
     }
 
 
@@ -337,5 +332,4 @@ public class SharkDetection : MonoBehaviour
         sharkManager.AddKill();
         sharkManager.AddScore(scoreValue);
     }
-
-}   
+}

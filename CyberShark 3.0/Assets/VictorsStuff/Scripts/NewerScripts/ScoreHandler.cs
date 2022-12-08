@@ -6,8 +6,10 @@ using TMPro;
 public class ScoreHandler : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
+    
 
-    private float score;
+    private int score;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +22,6 @@ public class ScoreHandler : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+
+    
 }

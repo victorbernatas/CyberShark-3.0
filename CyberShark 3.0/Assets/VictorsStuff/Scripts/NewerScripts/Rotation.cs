@@ -16,7 +16,7 @@ public class Rotation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (rb.velocity != Vector3.zero)
         {
@@ -42,6 +42,8 @@ public class Rotation : MonoBehaviour
 
         // used to multiply by delta.deltaTime instead of 0.1f but it gave me errors if the quaternion equaled 0 (very rarely, but still) don't forget to look into it
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * 0.1f);
+
+
 
 
     }
