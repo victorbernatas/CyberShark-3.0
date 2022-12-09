@@ -58,9 +58,9 @@ public class PlayerControls : MonoBehaviour
 
             Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>().normalized;
 
-            currentInput = Vector3.Slerp(Vector2.zero, inputVector, lerpFloat).normalized;
+            currentInput = Vector3.Slerp(Vector2.zero, inputVector, Time.deltaTime).normalized;
 
-            playerRigidBody.AddForce(new Vector3(currentInput.x, 0, currentInput.y) * forceMagnitude * Time.deltaTime, ForceMode.Acceleration);
+            playerRigidBody.AddForce(new Vector3(currentInput.x, 0, currentInput.y) * forceMagnitude, ForceMode.Acceleration);
 
             playerRigidBody.velocity = Vector3.ClampMagnitude(playerRigidBody.velocity, maxVelocity);
 
@@ -100,7 +100,7 @@ public class PlayerControls : MonoBehaviour
             //slerp
             Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>().normalized;
 
-            currentInput = Vector3.Slerp(Vector2.zero, inputVector, lerpFloat).normalized;
+            currentInput = Vector3.Slerp(Vector2.zero, inputVector, Time.deltaTime).normalized;
 
             playerRigidBody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * forceMagnitude, ForceMode.Acceleration);
             playerRigidBody.velocity = Vector3.ClampMagnitude(playerRigidBody.velocity, maxVelocity);
