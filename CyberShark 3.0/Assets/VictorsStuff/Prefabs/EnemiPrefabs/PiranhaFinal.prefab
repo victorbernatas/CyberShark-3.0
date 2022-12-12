@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6137681017509801967}
   - component: {fileID: 2632276491702370645}
   - component: {fileID: 482995765}
+  - component: {fileID: 1154913176}
+  - component: {fileID: 6891938627188246754}
   m_Layer: 7
   m_Name: PiranhaFinal
   m_TagString: Untagged
@@ -142,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c0f1c647794c747a471b300341ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  rotationSpeed: 0
+  speed: 2
+  rotationSpeed: 1
 --- !u!54 &482995765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,6 +162,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1154913176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579372965292948455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9d2f84879b8ca42a512bcb9ee45203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6891938627188246754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579372965292948455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09391144, y: 0.09247351, z: 0.11750102}
+  m_Center: {x: 0, y: 0, z: 0.030560961}
 --- !u!1 &1030034865505671280
 GameObject:
   m_ObjectHideFlags: 0
