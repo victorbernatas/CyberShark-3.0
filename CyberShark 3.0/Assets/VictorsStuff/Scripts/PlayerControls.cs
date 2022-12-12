@@ -24,6 +24,9 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float maxVelocity;
 
 
+    [SerializeField] bool hasPowerUp;
+
+
    
     
 
