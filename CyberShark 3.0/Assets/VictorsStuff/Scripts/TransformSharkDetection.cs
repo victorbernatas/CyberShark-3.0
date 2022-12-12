@@ -277,51 +277,48 @@ public class TransformSharkDetection : MonoBehaviour
 
     void ColorChange()
     {
-        /*Renderer northSphereRenderer = northSphere.GetComponent<Renderer>();
-        Renderer eastSphereRenderer = eastSphere.GetComponent<Renderer>();
-        Renderer southSphereRenderer = southSphere.GetComponent<Renderer>();
-        Renderer westSphereRenderer = westSphere.GetComponent<Renderer>();*/
+        
 
         if (northIsActivated && !northIsOrigin)
         {
-            northSphereRenderer.material.SetColor("_Color", activatedColor);
+            northSphereRenderer.material.SetColor("_BaseColor", Color.cyan);
         }
 
         else if (northIsOrigin)
         {
-            northSphereRenderer.material.SetColor("_Color", originColor);
+            northSphereRenderer.material.SetColor("_BaseColor", Color.red);
         }
         else
         {
-            northSphereRenderer.material.SetColor("_Color", Color.white);
+            northSphereRenderer.material.SetColor("_BaseColor", Color.white);
         }
 
 
         if (eastIsActivated && !eastIsOrigin)
         {
-            eastSphereRenderer.material.SetColor("_Color", activatedColor);
+            eastSphereRenderer.material.SetColor("_BaseColor", Color.cyan);
         }
         else if (eastIsOrigin)
         {
-            eastSphereRenderer.material.SetColor("_Color", originColor);
+            eastSphereRenderer.material.SetColor("_BaseColor", Color.red);
         }
 
         else
         {
-            eastSphereRenderer.material.SetColor("_Color", Color.white);
+            eastSphereRenderer.material.SetColor("_BaseColor", Color.white);
         }
 
         if (southIsActivated && !southIsOrigin)
         {
-            southSphereRenderer.material.SetColor("_Color", activatedColor);
+            southSphereRenderer.material.SetColor("_BaseColor", Color.cyan);
         }
         else if (southIsOrigin)
         {
-            southSphereRenderer.material.SetColor("_Color", originColor);
+            southSphereRenderer.material.SetColor("_BaseColor", Color.red);
         }
         else
         {
-            southSphereRenderer.material.SetColor("_Color", Color.white);
+            southSphereRenderer.material.SetColor("_BaseColor", Color.white);
         }
 
 
@@ -329,16 +326,16 @@ public class TransformSharkDetection : MonoBehaviour
 
         if (westIsActivated && !westIsOrigin)
         {
-            westSphereRenderer.material.SetColor("_Color", activatedColor);
+            westSphereRenderer.material.SetColor("_BaseColor", Color.cyan);
         }
 
         else if (westIsOrigin)
         {
-            westSphereRenderer.material.SetColor("_Color", originColor);
+            westSphereRenderer.material.SetColor("_BaseColor", Color.red);
         }
         else
         {
-            westSphereRenderer.material.SetColor("_Color", Color.white);
+            westSphereRenderer.material.SetColor("_BaseColor", Color.white);
         }
     }
 
