@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SharkHeadMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 9a5656da1dcb57b44b8f4359924f00da, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_3b37229fea154cca8c66a76a10dabf60_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3c778662d3cc8944f8f87b2fa9f0ed02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3cce899fdad14f9aa0a2bd3ed1356c45_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5a8600d3a4fa29b40ac6987d3069dc26, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_57d1119007474c87a9c326108a927355_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 78d748048c87378459313d613cd9ba7b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_630568d52dfd4242bc8af013bffdae77_Texture_1:
+        m_Texture: {fileID: 2800000, guid: cafd8fa2276ae37478c9ea01ca2039ff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fe83ed7f202d4a80939fd6c83bbea327_Texture_1:
+        m_Texture: {fileID: 2800000, guid: b9ff63cf1d9b3234c9118f578b56d5e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []

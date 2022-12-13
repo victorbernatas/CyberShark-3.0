@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tail Texture
+  m_Shader: {fileID: -6465566751694194690, guid: a95fcdd140b14b4478d6e503a5622340, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_1db9c2e706294f7481bd1902ea3d2319_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 29d6e2194080e1b4ea7a9561e69b796e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4bff7b9183e04a3e817f96f56791dc36_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 8d5fa36b681a65f4e825842f803d7866, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_517c0e07e85144e78ddd977597903bcd_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 8b41e2e149aa4a5459dc3e3f4ad8b9c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_524cd60df3554554bba8500da43a41aa_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7c7c8dae513bfda47bdce073ad03feaf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_d2f1b1756710403b877ff9a8900ae64e_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7e72c5a4f0c007840b1a57b76ba03acd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
