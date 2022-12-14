@@ -26,6 +26,12 @@ public class PlayerControls : MonoBehaviour
 
     [SerializeField] bool hasPowerUp;
 
+    [SerializeField] bool isSlowed;
+
+
+    private float slowedValues = 7;
+    private float normalValues;
+
 
    
     
@@ -42,6 +48,7 @@ public class PlayerControls : MonoBehaviour
     {
 
         Swimming();
+        SlowDown();
        
 
     }
@@ -138,38 +145,31 @@ public class PlayerControls : MonoBehaviour
         sharkMovement.Shark.Movement.performed -= Movement_performed;
     }
 
-
-
-
-    /*private void KeepPlayerOnScreen()
-
-
+    private void OnTriggerEnter(Collider other)
     {
-        Vector3 newPosition = transform.position;
-        Vector3 viewportPosition = mainCamera.WorldToViewportPoint(transform.position);
-
-        if (viewportPosition.x >= 0.98)
+        if(other.gameObject.CompareTag("Tower"))
         {
-            newPosition.x = newPosition.x - 0.05f;
-        }
+            isSlowed = true;
 
-        if (viewportPosition.x <= 0.02)
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("Tower") )
         {
-            newPosition.x = newPosition.x + 0.05f;
+            isSlowed = false;
         }
+    }
 
-        if (viewportPosition.y >= 0.98)
+
+    private void SlowDown()
+    {
+        if (isSlowed == true)
         {
-            newPosition.z = newPosition.z - 0.05f;
+            playerRigidBody.velocity = playerRigidBody.velocity / 2;
         }
-
-        if (viewportPosition.y <= 0.02)
-        {
-            newPosition.z = newPosition.z + 0.05f;
-        }
-
-        transform.position = newPosition;
-    }*/
-
+    }
 
 }
