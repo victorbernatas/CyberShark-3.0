@@ -7,6 +7,7 @@ public class PlayGame : MonoBehaviour
 {
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject quitmenu;
 
 
 
@@ -16,7 +17,7 @@ public class PlayGame : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             string sceneName = currentScene.name;
 
-            if (startMenu == null && sceneName == "StartMenu")
+            if (startMenu == null && sceneName == "NewStart")
             {
                 StartGame();
             }
@@ -28,13 +29,19 @@ public class PlayGame : MonoBehaviour
             PlayAgain();
             
         }
+
+        if (quitmenu == null && sceneName == "NewStart")
+        {
+            QuitGame();
+        }
     }
 
 
     public void StartGame()
         {
+        Debug.Log("hehehe");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+        }
 
     public void PlayAgain()
         {
