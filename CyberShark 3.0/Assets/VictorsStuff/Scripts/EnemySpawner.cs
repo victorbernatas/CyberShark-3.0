@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemies();
             
             timer = timer+ timeBetweenSpawn;
-            Debug.Log(timer);
+            
         }
 
     }
