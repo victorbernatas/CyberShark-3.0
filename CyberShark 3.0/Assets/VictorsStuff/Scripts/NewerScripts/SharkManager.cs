@@ -19,6 +19,11 @@ public class SharkManager : MonoBehaviour
     [SerializeField]private bool middlePartActivated;
     [SerializeField] private bool backPartActivated;
 
+    private PlayerControls playerControls;
+    [SerializeField] private GameObject sharkHead;
+
+
+
     public TMP_Text scoreText;
 
     public const string HighScoreKey = "HighScore";
@@ -26,6 +31,7 @@ public class SharkManager : MonoBehaviour
 
     void Start()
     {
+        playerControls = sharkHead.GetComponent<PlayerControls>();
         middlePart.SetActive(false);
         backPart.SetActive(false);
     }
@@ -88,6 +94,8 @@ public class SharkManager : MonoBehaviour
             middlePartActivated = true;
             hp = hp + 1;
 
+            playerControls.PowerUp();
+
         }
     }
 
@@ -100,6 +108,8 @@ public class SharkManager : MonoBehaviour
           
             backPartActivated = true;
             hp = hp + 1;
+
+            playerControls.PowerUp();
         }
     }
 
@@ -112,7 +122,8 @@ public class SharkManager : MonoBehaviour
             hp = hp - 1;
             killCount = 0;
             backPartActivated = false;
-            Debug.Log("Backpartgone"+ killCount);
+            playerControls.PowerDown();
+            
             return;
         }
         if (!backPartActivated && middlePartActivated)
@@ -121,14 +132,15 @@ public class SharkManager : MonoBehaviour
             hp = hp - 1;
             killCount = 0;
             middlePartActivated = false;
-            Debug.Log("Middlepartgone" + killCount);
+            playerControls.PowerDown();
+
             return;
         }
         if (!backPartActivated && !middlePartActivated)
         {
             hp = hp - 1;
             killCount = 0;
-            Debug.Log("You basically died" + killCount);
+           
             Death();
 
         }
@@ -151,4 +163,7 @@ public class SharkManager : MonoBehaviour
             PlayerPrefs.SetInt(HighScoreKey, score);
         }
     }
+
+
+   
 }

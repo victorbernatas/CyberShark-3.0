@@ -23,18 +23,19 @@ public class PlayerControls : MonoBehaviour
 
     [SerializeField] float maxVelocity;
 
-
-    [SerializeField] bool hasPowerUp;
-
     [SerializeField] bool isSlowed;
 
 
     private float slowedValues = 7;
     private float normalValues;
 
+    [SerializeField] bool hasPowerUp;
+    [SerializeField] float powerUpValue;
+    [SerializeField] float improvedMaxVelocity;
 
-   
-    
+
+
+
 
     private void Awake()
     {
@@ -170,6 +171,19 @@ public class PlayerControls : MonoBehaviour
         {
             playerRigidBody.velocity = playerRigidBody.velocity / 2;
         }
+    }
+
+
+    public void PowerUp()
+    {
+        forceMagnitude = forceMagnitude + powerUpValue;
+        maxVelocity = maxVelocity + improvedMaxVelocity;
+    }
+
+    public void PowerDown()
+    {
+        forceMagnitude = forceMagnitude - powerUpValue;
+        maxVelocity = maxVelocity - improvedMaxVelocity;
     }
 
 }
