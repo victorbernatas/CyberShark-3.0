@@ -8,24 +8,25 @@ public class PlayGame : MonoBehaviour
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject player;
     [SerializeField] GameObject quitMenu;
-    [SerializeField] GameObject startCollider;
-    [SerializeField] GameObject quitCollider;
     [SerializeField] GameObject sharkHead;
     public GameObject uiEffect;
+    public GameObject uiEffect2;
     public GameObject playerDeathEffect;
     public float duration = 2f;
+    private bool particlePlayed = true;
+    private bool particlePlayedPart2 = true;
 
 
     private void Update()
     {
         
-            Scene currentScene = SceneManager.GetActiveScene();
-            string sceneName = currentScene.name;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
 
-            if (startMenu == null && startMenu.Equals(null) && sceneName == "Newnewstart")
-            {
-               StartCoroutine(StartGame());
-            }
+        if (startMenu == null && startMenu.Equals(null) && sceneName == "Newnewstart")
+        {
+            StartCoroutine(StartGame());
+        }
         
 
         
@@ -44,33 +45,65 @@ public class PlayGame : MonoBehaviour
 
     IEnumerator StartGame()
         {
-        Debug.Log("hehehe");
-        Instantiate(uiEffect, startCollider.transform.position, Quaternion.identity);
+        if (particlePlayed)
+        {
+            Debug.Log("hehehe");
+            Instantiate(uiEffect, sharkHead.transform.position, transform.rotation);
 
-        yield return new WaitForSeconds(duration);
+            particlePlayed = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            yield return new WaitForSeconds(duration);
+        }
+        if (particlePlayedPart2 && !particlePlayed)
+        {
+            Instantiate(uiEffect2, sharkHead.transform.position, transform.rotation);
+
+            particlePlayedPart2 = false;
+
+            yield return new WaitForSeconds(duration);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
         }
 
     IEnumerator PlayAgain()
         {
-        Debug.Log("restarting");
-        Instantiate(playerDeathEffect, sharkHead.transform.position, Quaternion.identity);
+            if (particlePlayed)
+        {
+            Debug.Log("restarting");
+            Instantiate(playerDeathEffect, sharkHead.transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(duration);
+            particlePlayed = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            yield return new WaitForSeconds(duration);
+
+            Destroy(sharkHead);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
+        
+        }
     IEnumerator QuitGame()
         {
-        Debug.Log("Quitting...");
-        Instantiate(uiEffect, quitCollider.transform.position, Quaternion.identity);
+            if (particlePlayed)
+        {
+            Debug.Log("Quitting...");
+            Instantiate(uiEffect, sharkHead.transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(duration);
+            particlePlayed = false;
 
-        Application.Quit();
+            yield return new WaitForSeconds(duration);
+
+            Application.Quit();
         }
+
+        }
+
+    public void PlayAgainButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
 
     
 }
