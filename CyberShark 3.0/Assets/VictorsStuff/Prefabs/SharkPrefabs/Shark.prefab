@@ -4842,6 +4842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623886650479616315}
   - component: {fileID: 249343629}
+  - component: {fileID: 1925928906}
   m_Layer: 6
   m_Name: Shark
   m_TagString: Untagged
@@ -4881,8 +4882,8 @@ MonoBehaviour:
   killCount: 0
   score: 0
   hp: 1
-  killCountForMiddlePart: 1
-  killCountForBackPart: 2
+  killCountForMiddlePart: 3
+  killCountForBackPart: 4
   middlePart: {fileID: 2443774615574191455}
   backPart: {fileID: 2084094078900308112}
   middlePartActivated: 0
@@ -4892,7 +4893,106 @@ MonoBehaviour:
   middleTrail: {fileID: 5852202680790152419}
   backTrail1: {fileID: 8143882679113016573}
   backTrail2: {fileID: 0}
+  enemyDeath: {fileID: 8300000, guid: 535e0603882987349b63ef13ef036ea9, type: 3}
+  losePart: {fileID: 0}
+  gainPart: {fileID: 8300000, guid: 1dc3a806cdae96d4b8f949f748a7838a, type: 3}
   scoreText: {fileID: 0}
+--- !u!82 &1925928906
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702768674381154726}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.597
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2131595636292849652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4996,12 +5096,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4623886650479616315}
     m_Modifications:
     - target: {fileID: 1312434228203113754, guid: 5c8c00d82b5832d4b811cdb0ec8b9e17, type: 3}
-      propertyPath: powerUpValue
+      propertyPath: towerMalus
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1312434228203113754, guid: 5c8c00d82b5832d4b811cdb0ec8b9e17, type: 3}
+      propertyPath: powerUpValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312434228203113754, guid: 5c8c00d82b5832d4b811cdb0ec8b9e17, type: 3}
+      propertyPath: forceMagnitude
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312434228203113754, guid: 5c8c00d82b5832d4b811cdb0ec8b9e17, type: 3}
+      propertyPath: impulseMagnitude
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312434228203113754, guid: 5c8c00d82b5832d4b811cdb0ec8b9e17, type: 3}
       propertyPath: improvedMaxVelocity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717305128697906601, guid: 5c8c00d82b5832d4b811cdb0ec8b9e17, type: 3}
       propertyPath: m_Mesh
@@ -5574,6 +5686,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6830593634116052190}
     m_Modifications:
+    - target: {fileID: 1857275056618648231, guid: 3de54bfd8dda06a458cf4fcf1248e912, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 3799632335484284265, guid: 3de54bfd8dda06a458cf4fcf1248e912, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5650,7 +5766,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1857275056618648231, guid: 3de54bfd8dda06a458cf4fcf1248e912, type: 3}
       propertyPath: m_Time
-      value: 1.5
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1857275056618648231, guid: 3de54bfd8dda06a458cf4fcf1248e912, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time

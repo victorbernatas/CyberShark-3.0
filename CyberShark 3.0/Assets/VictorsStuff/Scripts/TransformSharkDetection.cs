@@ -50,6 +50,8 @@ public class TransformSharkDetection : MonoBehaviour
     [SerializeField] private Renderer westSphereRenderer;
     [SerializeField] private Renderer northSphereRenderer;
 
+    [SerializeField] private ParticleSystem deathEffect;
+
     private void Awake()
     {
         playerPos = GameObject.Find("SharkHead").GetComponent<Transform>();
@@ -341,8 +343,19 @@ public class TransformSharkDetection : MonoBehaviour
 
     void SelfDestroy()
     {
-        Destroy(this.gameObject);
+
+        
         sharkManager.AddKill();
         sharkManager.AddScore(scoreValue);
+        
+        Destroy(this.gameObject);
+        
+        
+    }
+
+    private void OnDestroy()
+    {
+        
+        Instantiate(deathEffect, transform.position, transform.rotation);
     }
 }

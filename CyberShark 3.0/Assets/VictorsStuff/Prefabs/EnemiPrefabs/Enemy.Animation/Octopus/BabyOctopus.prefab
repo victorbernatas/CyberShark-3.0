@@ -773,9 +773,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c0f1c647794c747a471b300341ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 6
-  slowedDownSpeed: 4
-  normalRotationSpeed: 0.1
+  normalSpeed: 5
+  slowedDownSpeed: 3
+  normalRotationSpeed: 0
   slowedDownRotationSpeed: 0
 --- !u!65 &-5022750960463184650
 BoxCollider:
@@ -825,11 +825,12 @@ MonoBehaviour:
   goingCounterClockwise: 0
   activatedColor: {r: 0, g: 0, b: 0, a: 0}
   originColor: {r: 0, g: 0, b: 0, a: 0}
-  scoreValue: 0
+  scoreValue: 2
   eastSphereRenderer: {fileID: 417004670155760348}
   southSphereRenderer: {fileID: 3024864177883578147}
   westSphereRenderer: {fileID: 178940031661610135}
   northSphereRenderer: {fileID: 3514257127301876773}
+  deathEffect: {fileID: 4340861304519149778, guid: e06930cca0a716843a041596174cfab8, type: 3}
 --- !u!1 &6937585871145005882
 GameObject:
   m_ObjectHideFlags: 0
