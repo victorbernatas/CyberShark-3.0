@@ -13,11 +13,21 @@ public class towerManager : MonoBehaviour
     [SerializeField] GameObject lamp3;
 
     [SerializeField] ParticleSystem particles1;
+    [SerializeField] ParticleSystem particles2;
+    [SerializeField] ParticleSystem particles3;
+
+    [SerializeField] float intervalMoment = 1.5f;
+    [SerializeField] float momentM;
+
+    [SerializeField] float initialMomentM;
 
 
-    private bool tower1Activated;
-    private bool tower2Activated;
-    private bool tower3Activated;
+    [SerializeField] bool played1;
+    [SerializeField] bool played2;
+    [SerializeField] bool played;
+
+
+
 
     private int towers;
     private int particles = 0;
@@ -26,12 +36,7 @@ public class towerManager : MonoBehaviour
     private float timer;
     [SerializeField] private float timeBetweenSwitches;
 
-    private float particleTimer;
-    float timeBetweenParticles;
-    [SerializeField] float particleWindow = 1.5f;
-
-    //[SerializeField] float 
-
+   
 
 
 
@@ -39,9 +44,10 @@ public class towerManager : MonoBehaviour
     void Start()
     {
         timer = timeBetweenSwitches;
-        timeBetweenParticles = timeBetweenSwitches - particleWindow;
-        particleTimer = timeBetweenParticles;
-        
+
+        momentM = timeBetweenSwitches - intervalMoment;
+        initialMomentM = momentM;
+
     }
 
     // Update is called once per frame
@@ -49,9 +55,11 @@ public class towerManager : MonoBehaviour
     {
         ChangeActiveTower();
         TowerHandler();
-        //PlayParticles();
 
-        
+        momentM = momentM - Time.deltaTime;
+
+ 
+
     }
 
     private void ChangeActiveTower()
@@ -74,39 +82,7 @@ public class towerManager : MonoBehaviour
         }
     }
 
-    private void PlayParticles()
-    {
-        particleTimer = particleTimer - Time.deltaTime;
-        if (particleTimer <= 0)
-        {
-            particles = particles + 1;
-
-            if(particles ==3)
-            {
-                particles = 0;
-            }
-
-            particleTimer = particleTimer + timeBetweenParticles;
-        }
-
-
-        switch (particles)
-        {
-            case 0:
-                particles1.Stop();
-                particles1.Play();
-                
-                break;
-            case 1:
-                particles1.Stop();
-                particles1.Play();
-                break;
-            case 2:
-                particles1.Stop();
-                particles1.Play();
-                break;
-        }
-    }
+   
 
     private void TowerHandler()
     {
@@ -124,6 +100,14 @@ public class towerManager : MonoBehaviour
                 tower3Collider.enabled = false;
                 lamp3.SetActive(false);
 
+                if(momentM <= 0)
+                {
+                    
+                    Debug.Log("tower2about to start");
+                    particles2.Play();
+                    momentM = momentM + timeBetweenSwitches;
+
+                }
                 
 
                 break;
@@ -137,8 +121,15 @@ public class towerManager : MonoBehaviour
                 tower3Collider.enabled = false;
                 lamp3.SetActive(false);
 
+                if (momentM <= 0)
+                {
+                    Debug.Log("tower3abouttostart");
+                    particles3.Play();
+                    momentM = momentM + timeBetweenSwitches;
+                }
 
-               
+
+
                 break;
             case 2:
                 tower1Collider.enabled = false;
@@ -150,49 +141,18 @@ public class towerManager : MonoBehaviour
                 tower3Collider.enabled = true;
                 lamp3.SetActive(true);
 
-                
+                if (momentM <= 0)
+                {
+                    Debug.Log("tower1abouttostart");
+                    particles1.Play();
+                    momentM = momentM + timeBetweenSwitches;
+                }
 
-               
+
+
+
                 break;
         }
             
-
-
-
-       if (tower1Activated)
-        {
-            tower1Collider.enabled = true;
-            lamp1.SetActive(true);
-
-            tower2Collider.enabled = false;
-            lamp2.SetActive(false);
-
-            tower3Collider.enabled = false;
-            lamp3.SetActive(false);
-        }
-
-       if(tower2Activated)
-        {
-            tower1Collider.enabled = false;
-            lamp1.SetActive(false);
-
-            tower2Collider.enabled = true;
-            lamp2.SetActive(true);
-
-            tower3Collider.enabled = false;
-            lamp3.SetActive(false);
-        }
-
-        if (tower2Activated)
-        {
-            tower1Collider.enabled = false;
-            lamp1.SetActive(false);
-
-            tower2Collider.enabled = false;
-            lamp2.SetActive(false);
-
-            tower3Collider.enabled = true;
-            lamp3.SetActive(true);
-        }
     }
 }

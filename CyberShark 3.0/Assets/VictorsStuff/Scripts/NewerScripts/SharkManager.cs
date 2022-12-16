@@ -29,6 +29,8 @@ public class SharkManager : MonoBehaviour
     [SerializeField] TrailRenderer backTrail1;
     [SerializeField] TrailRenderer backTrail2;
 
+    private AudioSource audiosource;
+
 
 
     public TMP_Text scoreText;
@@ -45,6 +47,8 @@ public class SharkManager : MonoBehaviour
         middleTrail.enabled = false;
         backTrail1.enabled = false;
         //backTrail2.enabled = false;
+
+        audiosource = GetComponent<AudioSource>();
 
     }
 
@@ -69,6 +73,8 @@ public class SharkManager : MonoBehaviour
 
     public void AddScore(int scoreValue)
     {
+        //audiosource.PlayDelayed();
+
         if (scoreText != null)
         {
             if (!middlePartActivated && !backPartActivated)

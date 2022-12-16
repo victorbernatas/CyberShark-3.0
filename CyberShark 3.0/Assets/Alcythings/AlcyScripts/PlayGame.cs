@@ -7,8 +7,13 @@ public class PlayGame : MonoBehaviour
 {
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject player;
-    [SerializeField] GameObject quitmenu;
-
+    [SerializeField] GameObject quitMenu;
+    [SerializeField] GameObject startCollider;
+    [SerializeField] GameObject quitCollider;
+    [SerializeField] GameObject sharkHead;
+    public GameObject uiEffect;
+    public GameObject playerDeathEffect;
+    public float duration = 2f;
 
 
     private void Update()
@@ -17,41 +22,54 @@ public class PlayGame : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             string sceneName = currentScene.name;
 
-            if (startMenu == null && sceneName == "NewStart")
+            if (startMenu == null && startMenu.Equals(null) && sceneName == "Newnewstart")
             {
-                StartGame();
+               StartCoroutine(StartGame());
             }
         
 
         
-        if (player == null && sceneName == "Level" )
+        if (player == null && player.Equals(null) && sceneName == "Level" )
         {
-            PlayAgain();
+           StartCoroutine(PlayAgain());
             
         }
 
-        if (quitmenu == null && sceneName == "NewStart")
+        if (quitMenu == null && quitMenu.Equals(null) && sceneName == "Newnewstart")
         {
-            QuitGame();
+          StartCoroutine(QuitGame());
         }
     }
 
 
-    public void StartGame()
+    IEnumerator StartGame()
         {
         Debug.Log("hehehe");
+        Instantiate(uiEffect, startCollider.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(duration);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-    public void PlayAgain()
+    IEnumerator PlayAgain()
         {
+        Debug.Log("restarting");
+        Instantiate(playerDeathEffect, sharkHead.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(duration);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
-        public void QuitGame()
+    IEnumerator QuitGame()
         {
-            Debug.Log("Quitting...");
-            Application.Quit();
+        Debug.Log("Quitting...");
+        Instantiate(uiEffect, quitCollider.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(duration);
+
+        Application.Quit();
         }
 
     
