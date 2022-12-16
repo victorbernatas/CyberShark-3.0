@@ -250,6 +250,9 @@ MonoBehaviour:
   southSphereRenderer: {fileID: 4300107012823712808}
   westSphereRenderer: {fileID: 1701809751498414551}
   northSphereRenderer: {fileID: 4332403471905960547}
+  sharkDeathSound: {fileID: 8300000, guid: fe726268fc52d404abda61d205552695, type: 3}
+  sharkDeath: {fileID: 0}
+  deathEffect: {fileID: 3639979708799141165, guid: caeba5caabaaae548aaa72058952ebcd, type: 3}
 --- !u!54 &5699730542776004918
 Rigidbody:
   m_ObjectHideFlags: 0
