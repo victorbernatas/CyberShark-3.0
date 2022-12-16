@@ -8,8 +8,6 @@ public class PlayGame : MonoBehaviour
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject player;
     [SerializeField] GameObject quitMenu;
-    [SerializeField] GameObject startCollider;
-    [SerializeField] GameObject quitCollider;
     [SerializeField] GameObject sharkHead;
     public GameObject uiEffect;
     public GameObject uiEffect2;
@@ -22,13 +20,13 @@ public class PlayGame : MonoBehaviour
     private void Update()
     {
         
-            Scene currentScene = SceneManager.GetActiveScene();
-            string sceneName = currentScene.name;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
 
-            if (startMenu == null && startMenu.Equals(null) && sceneName == "Newnewstart")
-            {
-               StartCoroutine(StartGame());
-            }
+        if (startMenu == null && startMenu.Equals(null) && sceneName == "Newnewstart")
+        {
+            StartCoroutine(StartGame());
+        }
         
 
         
@@ -50,21 +48,19 @@ public class PlayGame : MonoBehaviour
         if (particlePlayed)
         {
             Debug.Log("hehehe");
-            Instantiate(uiEffect, startCollider.transform.position, Quaternion.identity);
+            Instantiate(uiEffect, sharkHead.transform.position, transform.rotation);
 
             particlePlayed = false;
 
             yield return new WaitForSeconds(duration);
         }
-        if (particlePlayedPart2)
+        if (particlePlayedPart2 && !particlePlayed)
         {
-            Instantiate(uiEffect2, startCollider.transform.position, Quaternion.identity);
+            Instantiate(uiEffect2, sharkHead.transform.position, transform.rotation);
 
             particlePlayedPart2 = false;
 
             yield return new WaitForSeconds(duration);
-
-            Destroy(startCollider);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -84,25 +80,27 @@ public class PlayGame : MonoBehaviour
 
             Destroy(sharkHead);
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         
         }
-
     IEnumerator QuitGame()
         {
             if (particlePlayed)
         {
             Debug.Log("Quitting...");
-            Instantiate(uiEffect, quitCollider.transform.position, Quaternion.identity);
+            Instantiate(uiEffect, sharkHead.transform.position, Quaternion.identity);
 
             particlePlayed = false;
 
             yield return new WaitForSeconds(duration);
 
-            Destroy(quitCollider);
-
             Application.Quit();
+        }
+
+            void PlayAgainButton()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
         }
 
