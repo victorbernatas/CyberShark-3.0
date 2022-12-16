@@ -191,7 +191,11 @@ MonoBehaviour:
   smoothInputSpeed: 0.2
   lerpFloat: 0.9
   maxVelocity: 8
+  isSlowed: 0
   hasPowerUp: 0
+  powerUpValue: 0
+  improvedMaxVelocity: 0
+  towerMalus: 1.5
 --- !u!1 &8116870074914087779
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +236,10 @@ PrefabInstance:
     - target: {fileID: 2369926023457846617, guid: 1bb249430cb01464ba5243d182362221, type: 3}
       propertyPath: m_Name
       value: Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2369926023457846617, guid: 1bb249430cb01464ba5243d182362221, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7196653871691958327, guid: 1bb249430cb01464ba5243d182362221, type: 3}
       propertyPath: moveWithTransform

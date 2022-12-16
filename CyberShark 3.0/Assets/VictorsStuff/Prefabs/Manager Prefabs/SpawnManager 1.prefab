@@ -199,14 +199,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec05e9e0a121aeb4bb926dbef8f2c4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5095040820720616343, guid: b126e5d4b6c56ab4ea9e55591e2c36ea, type: 3}
-  timeBetweenSpawn: 3.5
-  spawnPoint: {x: 0, y: 0}
+  crabPrefab: {fileID: 5095040820720616343, guid: b126e5d4b6c56ab4ea9e55591e2c36ea, type: 3}
+  piranhaPrefab: {fileID: 1788977485296236791, guid: ae639cd8f77583849beb157a00ab1b9a, type: 3}
+  octopusPrefab: {fileID: 0}
+  timeBetweenCrabSpawn: 4
+  timeBeforePiranha: 35
+  piranhaSpawnInterval: 10
+  piranhaTimer: 0
   spawnPoints:
   - {fileID: 2718792323132438893}
   - {fileID: 2718792323076038590}
   - {fileID: 2718792323989399059}
   - {fileID: 2718792323964746651}
+  - {fileID: 8549419527267151448}
+  - {fileID: 2699448894478523823}
 --- !u!1 &8750333635297956301
 GameObject:
   m_ObjectHideFlags: 0

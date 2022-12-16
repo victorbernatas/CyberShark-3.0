@@ -16,9 +16,10 @@ public class CollisionHandler : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    { 
         if(!other.gameObject.CompareTag("Tower"))
-        {
+
+        { 
             sharkManager.CollisionHandler();
             Destroy(gameObject);
             

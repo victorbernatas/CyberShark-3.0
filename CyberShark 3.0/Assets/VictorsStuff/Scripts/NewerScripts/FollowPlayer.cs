@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     private Transform player;
-    [SerializeField]
+    
     private float speed;
     private Rigidbody rb;
 
@@ -15,14 +15,17 @@ public class FollowPlayer : MonoBehaviour
     private Quaternion lookRotation;
     private Vector3 direction;
 
-    [SerializeField] bool isSlowed;
-
-    private float slowedDownSpeed = 0.8f;
+    private bool isSlowed;
     [SerializeField]
     private float normalSpeed = 2f;
+    [SerializeField]
+    private float slowedDownSpeed = 0.8f;
+    
 
     [SerializeField]
     private float normalRotationSpeed;
+    [SerializeField]
+    private float slowedDownRotationSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,7 @@ public class FollowPlayer : MonoBehaviour
    
     private void FixedUpdate()
     {
+        if (player == null) { return; }
         Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         rb.MovePosition(pos);
 
@@ -60,7 +64,9 @@ public class FollowPlayer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Tower"))
+
         {
+            ReliableOnTriggerExit.NotifyTriggerEnter(other, gameObject, OnTriggerExit);
             isSlowed = true;
 
         }
@@ -71,6 +77,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tower"))
         {
+            ReliableOnTriggerExit.NotifyTriggerExit(other, gameObject);
             isSlowed = false;
         }
     }
@@ -81,7 +88,7 @@ public class FollowPlayer : MonoBehaviour
         {
             Debug.Log(speed);
             speed = slowedDownSpeed;
-            rotationSpeed = 0;
+            rotationSpeed = slowedDownRotationSpeed;
             
             
         }
