@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+
 
 public class SharkManager : MonoBehaviour
 {
@@ -22,6 +24,11 @@ public class SharkManager : MonoBehaviour
     private PlayerControls playerControls;
     [SerializeField] private GameObject sharkHead;
 
+    [SerializeField] TrailRenderer headTrail;
+    [SerializeField] TrailRenderer middleTrail;
+    [SerializeField] TrailRenderer backTrail1;
+    [SerializeField] TrailRenderer backTrail2;
+
 
 
     public TMP_Text scoreText;
@@ -34,6 +41,11 @@ public class SharkManager : MonoBehaviour
         playerControls = sharkHead.GetComponent<PlayerControls>();
         middlePart.SetActive(false);
         backPart.SetActive(false);
+
+        middleTrail.enabled = false;
+        backTrail1.enabled = false;
+        //backTrail2.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -96,6 +108,9 @@ public class SharkManager : MonoBehaviour
 
             playerControls.PowerUp();
 
+            headTrail.enabled = false;
+            middleTrail.enabled = true;
+
         }
     }
 
@@ -110,6 +125,10 @@ public class SharkManager : MonoBehaviour
             hp = hp + 1;
 
             playerControls.PowerUp();
+
+            middleTrail.enabled = false;
+            backTrail1.enabled = true;
+            //backTrail2.enabled = true;
         }
     }
 
@@ -123,6 +142,8 @@ public class SharkManager : MonoBehaviour
             killCount = 0;
             backPartActivated = false;
             playerControls.PowerDown();
+
+            middleTrail.enabled = true;
             
             return;
         }
@@ -133,6 +154,7 @@ public class SharkManager : MonoBehaviour
             killCount = 0;
             middlePartActivated = false;
             playerControls.PowerDown();
+            headTrail.enabled = true;
 
             return;
         }
@@ -151,6 +173,7 @@ public class SharkManager : MonoBehaviour
         if (hp == 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

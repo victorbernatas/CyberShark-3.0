@@ -33,6 +33,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float powerUpValue;
     [SerializeField] float improvedMaxVelocity;
 
+    [SerializeField] float towerMalus = 1.5f;
+
 
 
 
@@ -67,11 +69,11 @@ public class PlayerControls : MonoBehaviour
         if (playerRigidBody != null)
         {
 
-            Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>().normalized;
+            Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>();
 
             currentInput = Vector3.Slerp(Vector2.zero, inputVector, Time.deltaTime).normalized;
 
-            playerRigidBody.AddForce(new Vector3(currentInput.x, 0, currentInput.y) * forceMagnitude, ForceMode.Acceleration);
+            playerRigidBody.AddForce(new Vector3(currentInput.x, 0, currentInput.y) * impulseMagnitude, ForceMode.VelocityChange);
 
             playerRigidBody.velocity = Vector3.ClampMagnitude(playerRigidBody.velocity, maxVelocity);
 
@@ -109,11 +111,11 @@ public class PlayerControls : MonoBehaviour
         if (playerRigidBody != null)
         {
             //slerp
-            Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>().normalized;
+            Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>();
 
             currentInput = Vector3.Slerp(Vector2.zero, inputVector, Time.deltaTime).normalized;
 
-            playerRigidBody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * forceMagnitude, ForceMode.Acceleration);
+            playerRigidBody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * forceMagnitude, ForceMode.VelocityChange);
             playerRigidBody.velocity = Vector3.ClampMagnitude(playerRigidBody.velocity, maxVelocity);
 
             //Debug.Log(playerRigidBody.velocity);
@@ -150,6 +152,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Tower"))
         {
+            ReliableOnTriggerExit.NotifyTriggerEnter(other, gameObject, OnTriggerExit);
             isSlowed = true;
 
         }
@@ -160,6 +163,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Tower") )
         {
+            ReliableOnTriggerExit.NotifyTriggerExit(other, gameObject);
             isSlowed = false;
         }
     }
@@ -169,7 +173,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (isSlowed == true)
         {
-            playerRigidBody.velocity = playerRigidBody.velocity / 2;
+            playerRigidBody.velocity = playerRigidBody.velocity / towerMalus;
         }
     }
 
@@ -177,12 +181,14 @@ public class PlayerControls : MonoBehaviour
     public void PowerUp()
     {
         forceMagnitude = forceMagnitude + powerUpValue;
+        impulseMagnitude = impulseMagnitude + powerUpValue;
         maxVelocity = maxVelocity + improvedMaxVelocity;
     }
 
     public void PowerDown()
     {
         forceMagnitude = forceMagnitude - powerUpValue;
+        impulseMagnitude = impulseMagnitude - powerUpValue;
         maxVelocity = maxVelocity - improvedMaxVelocity;
     }
 
