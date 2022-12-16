@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/VictorsStuff/Scenes/NewStart.unity
-    guid: 1b5ebd0568d19724681f9eed02da8418
+  - enabled: 1
+    path: Assets/VictorsStuff/Scenes/Newnewstart.unity
+    guid: 2c32bbfe54217cf4a9bf11c324af1841
   - enabled: 1
     path: Assets/VictorsStuff/Scenes/Level.unity
     guid: b31617896b84bf64b9878d98e47f8f0b
