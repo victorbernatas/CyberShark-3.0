@@ -50,19 +50,12 @@ public class TransformSharkDetection : MonoBehaviour
     [SerializeField] private Renderer westSphereRenderer;
     [SerializeField] private Renderer northSphereRenderer;
 
-    [SerializeField] private AudioClip sharkDeathSound;
-    [SerializeField] private ParticleSystem sharkDeath;
-    [SerializeField] private GameObject deathEffect;
-
-    private AudioSource audiosource;
-
+    [SerializeField] private ParticleSystem deathEffect;
 
     private void Awake()
     {
         playerPos = GameObject.Find("SharkHead").GetComponent<Transform>();
         sharkManager = GameObject.Find("Shark").GetComponent<SharkManager>();
-
-        audiosource = GetComponent<AudioSource>();
 
 
         
@@ -76,7 +69,7 @@ public class TransformSharkDetection : MonoBehaviour
     private void Update()
     {
 
-       
+      
 
         DotDetection();
         NorthDetection();
@@ -350,15 +343,19 @@ public class TransformSharkDetection : MonoBehaviour
 
     void SelfDestroy()
     {
-        //Instantiate(deathEffect, transform.position, Quaternion.identity);
+
         
-        Destroy(this.gameObject);
         sharkManager.AddKill();
         sharkManager.AddScore(scoreValue);
+        
+        Destroy(this.gameObject);
+        
+        
     }
 
     private void OnDestroy()
     {
-        audiosource.PlayOneShot(sharkDeathSound);
+        
+        Instantiate(deathEffect, transform.position, transform.rotation);
     }
 }

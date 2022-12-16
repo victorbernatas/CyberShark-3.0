@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c0f1c647794c747a471b300341ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 2
+  normalSpeed: 2.8
   slowedDownSpeed: 1
   normalRotationSpeed: 0
   slowedDownRotationSpeed: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   dot4: 0
   northSphere: {fileID: 7783578967921074511}
   eastSphere: {fileID: 3293256198888619326}
-  southSphere: {fileID: 0}
+  southSphere: {fileID: 7426536844445129058}
   westSphere: {fileID: 7426536844445129058}
   northIsOrigin: 0
   southIsOrigin: 0
@@ -245,14 +245,12 @@ MonoBehaviour:
   goingCounterClockwise: 0
   activatedColor: {r: 0, g: 0, b: 0, a: 0}
   originColor: {r: 0, g: 0, b: 0, a: 0}
-  scoreValue: 0
+  scoreValue: 1
   eastSphereRenderer: {fileID: 1054217515709803217}
   southSphereRenderer: {fileID: 4300107012823712808}
   westSphereRenderer: {fileID: 1701809751498414551}
   northSphereRenderer: {fileID: 4332403471905960547}
-  sharkDeathSound: {fileID: 8300000, guid: fe726268fc52d404abda61d205552695, type: 3}
-  sharkDeath: {fileID: 0}
-  deathEffect: {fileID: 3639979708799141165, guid: caeba5caabaaae548aaa72058952ebcd, type: 3}
+  deathEffect: {fileID: 4340861304519149778, guid: e06930cca0a716843a041596174cfab8, type: 3}
 --- !u!54 &5699730542776004918
 Rigidbody:
   m_ObjectHideFlags: 0
