@@ -68,7 +68,7 @@ public class PlayerControls : MonoBehaviour
         //slerp
         if (playerRigidBody != null)
         {
-
+            // dont forget to put normalized again
             Vector2 inputVector = sharkMovement.Shark.Movement.ReadValue<Vector2>();
 
             currentInput = Vector3.Slerp(Vector2.zero, inputVector, Time.deltaTime).normalized;

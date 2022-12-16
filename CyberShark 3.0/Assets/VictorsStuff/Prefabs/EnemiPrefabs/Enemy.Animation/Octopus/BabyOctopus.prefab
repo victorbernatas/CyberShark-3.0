@@ -773,10 +773,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c0f1c647794c747a471b300341ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 2
-  slowedDownSpeed: 1
-  normalRotationSpeed: 2
-  slowedDownRotationSpeed: 0.1
+  normalSpeed: 6
+  slowedDownSpeed: 4
+  normalRotationSpeed: 0.1
+  slowedDownRotationSpeed: 0
 --- !u!65 &-5022750960463184650
 BoxCollider:
   m_ObjectHideFlags: 0
