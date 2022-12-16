@@ -98,11 +98,12 @@ public class PlayGame : MonoBehaviour
             Application.Quit();
         }
 
-            void PlayAgainButton()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
-        }
+
+    public void PlayAgainButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
 
     
 }
