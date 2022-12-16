@@ -56,12 +56,7 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        //KeepPlayerOnScreen();
-
-       
-    }
+    
 
     private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {

@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 89507389996767111}
   - component: {fileID: -5022750960463184650}
   - component: {fileID: 6278870761778682878}
+  - component: {fileID: -7269694572933732559}
   m_Layer: 7
   m_Name: BabyOctopus
   m_TagString: Untagged
@@ -831,6 +832,18 @@ MonoBehaviour:
   westSphereRenderer: {fileID: 178940031661610135}
   northSphereRenderer: {fileID: 3514257127301876773}
   deathEffect: {fileID: 4340861304519149778, guid: e06930cca0a716843a041596174cfab8, type: 3}
+--- !u!114 &-7269694572933732559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5765480711305524845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9d2f84879b8ca42a512bcb9ee45203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6937585871145005882
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,22 +10,25 @@ public class OctopusOnDisable : MonoBehaviour
     [SerializeField] Transform tbaby2;
     [SerializeField] GameObject baby3;
     [SerializeField] Transform tbaby3;
+
+
+    [SerializeField] GameObject sharkRef;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sharkRef = GameObject.FindGameObjectWithTag("SharkHead");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        Instantiate(baby1, tbaby1.position, Quaternion.identity);
-        Instantiate(baby2, tbaby2.position, Quaternion.identity);
-        Instantiate(baby3, tbaby3.position, Quaternion.identity);
+        if (sharkRef != null)
+        {
+            Instantiate(baby1, tbaby1.position, Quaternion.identity);
+            Instantiate(baby2, tbaby2.position, Quaternion.identity);
+            Instantiate(baby3, tbaby3.position, Quaternion.identity);
+        }
+        
     }
 }

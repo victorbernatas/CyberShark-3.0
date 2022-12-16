@@ -168,6 +168,7 @@ public class SharkManager : MonoBehaviour
             playerControls.PowerDown();
 
             middleTrail.enabled = true;
+            audiosource.PlayOneShot(losePart);
             
             return;
         }
@@ -179,6 +180,7 @@ public class SharkManager : MonoBehaviour
             middlePartActivated = false;
             playerControls.PowerDown();
             headTrail.enabled = true;
+            audiosource.PlayOneShot(losePart);
 
             return;
         }
@@ -186,7 +188,8 @@ public class SharkManager : MonoBehaviour
         {
             hp = hp - 1;
             killCount = 0;
-           
+            audiosource.PlayOneShot(losePart);
+
             Death();
 
         }

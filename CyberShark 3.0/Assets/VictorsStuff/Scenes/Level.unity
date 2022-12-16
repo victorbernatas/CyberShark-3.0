@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 83a21b74e68bd624a96842d1bd2761e9, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 0ae88648a8b00f94885495c53ae559d8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1655,6 +1655,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249343629, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: gainPart
+      value: 
+      objectReference: {fileID: 8300000, guid: dc8b0e095b2151e49a782e482e35779b, type: 3}
+    - target: {fileID: 249343629, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
+      propertyPath: losePart
+      value: 
+      objectReference: {fileID: 8300000, guid: 1dc3a806cdae96d4b8f949f748a7838a, type: 3}
     - target: {fileID: 249343629, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
       propertyPath: scoreText
       value: 
