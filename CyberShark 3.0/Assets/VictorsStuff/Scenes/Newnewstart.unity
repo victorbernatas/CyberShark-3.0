@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999946, b: 0.99999946, a: 1}
+  m_IndirectSpecularColor: {r: 0.12879303, g: 0.46907198, b: 0.52876514, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -372,11 +372,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6555920690553864983, guid: 084d56716a3fb9643b89d74fc0ad62ff, type: 3}
   m_PrefabInstance: {fileID: 2144386965}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &358072153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 430608977399809415, guid: f15a6018672ee1f4585b7a0b97171bf2, type: 3}
-  m_PrefabInstance: {fileID: 5575880840442142849}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &368005922
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,12 +495,21 @@ MonoBehaviour:
   tower1Collider: {fileID: 1151289812}
   tower2Collider: {fileID: 1436561264}
   tower3Collider: {fileID: 884480352}
-  lamp1: {fileID: 1814557037}
-  lamp2: {fileID: 358072153}
-  lamp3: {fileID: 1937337594}
+  lamp1: {fileID: 0}
+  lamp2: {fileID: 0}
+  lamp3: {fileID: 0}
   particles1: {fileID: 0}
+  particles2: {fileID: 0}
+  particles3: {fileID: 0}
+  intervalMoment: 1.5
+  momentM: 0
+  initialMomentM: 0
+  played1: 0
+  played2: 0
+  played: 0
+  towerOnSound: {fileID: 0}
+  towerWarning: {fileID: 0}
   timeBetweenSwitches: 10
-  particleWindow: 1.5
 --- !u!1 &431998307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,11 +1019,6 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 1.28
---- !u!1 &1013031286 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5822932821760693293, guid: c9a5a78eec9f24148b909d640aa0315b, type: 3}
-  m_PrefabInstance: {fileID: 127202684}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1033236045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,11 +1287,9 @@ MonoBehaviour:
   startMenu: {fileID: 2137530083}
   player: {fileID: 1340172600}
   quitMenu: {fileID: 1511458025}
-  startCollider: {fileID: 1750560713}
-  quitCollider: {fileID: 1013031286}
   sharkHead: {fileID: 195795404}
-  uiEffect: {fileID: 4879048431260416891, guid: ec7f5c05214d3d842b2213574a333f17, type: 3}
-  playerDeathEffect: {fileID: 0}
+  uiEffect: {fileID: 1609999503312591615, guid: 3f97dbc4d4809bc429a4277ee5d5a7db, type: 3}
+  playerDeathEffect: {fileID: 4879048431260416891, guid: ec7f5c05214d3d842b2213574a333f17, type: 3}
   duration: 2
 --- !u!1 &1386462091
 GameObject:
@@ -1557,11 +1554,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &1750560713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1965408752811600456, guid: dd0df72735f92af49aaa6fd7390528ab, type: 3}
-  m_PrefabInstance: {fileID: 58495014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1754843999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,11 +1620,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1814557037 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 430608976852288182, guid: f15a6018672ee1f4585b7a0b97171bf2, type: 3}
-  m_PrefabInstance: {fileID: 5575880840442142849}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1910919874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,11 +1681,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &1937337594 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 430608976511272292, guid: f15a6018672ee1f4585b7a0b97171bf2, type: 3}
-  m_PrefabInstance: {fileID: 5575880840442142849}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137530083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1965408752267056001, guid: dd0df72735f92af49aaa6fd7390528ab, type: 3}

@@ -10,11 +10,9 @@ public class PlayGame : MonoBehaviour
     [SerializeField] GameObject quitMenu;
     [SerializeField] GameObject sharkHead;
     public GameObject uiEffect;
-    public GameObject uiEffect2;
     public GameObject playerDeathEffect;
     public float duration = 2f;
     private bool particlePlayed = true;
-    private bool particlePlayedPart2 = true;
 
 
     private void Update()
@@ -53,15 +51,6 @@ public class PlayGame : MonoBehaviour
             particlePlayed = false;
 
             yield return new WaitForSeconds(duration);
-        }
-        if (particlePlayedPart2 && !particlePlayed)
-        {
-            Instantiate(uiEffect2, sharkHead.transform.position, transform.rotation);
-
-            particlePlayedPart2 = false;
-
-            yield return new WaitForSeconds(duration);
-
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
