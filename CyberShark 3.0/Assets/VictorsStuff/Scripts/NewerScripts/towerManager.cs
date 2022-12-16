@@ -27,10 +27,14 @@ public class towerManager : MonoBehaviour
     [SerializeField] bool played;
 
 
+    private AudioSource audiosource;
+    [SerializeField] private AudioClip towerOnSound;
+    [SerializeField] private AudioClip towerWarning;
+
+
 
 
     private int towers;
-    private int particles = 0;
 
     
     private float timer;
@@ -47,6 +51,8 @@ public class towerManager : MonoBehaviour
 
         momentM = timeBetweenSwitches - intervalMoment;
         initialMomentM = momentM;
+
+        audiosource = GetComponent<AudioSource>();
 
     }
 
@@ -71,6 +77,8 @@ public class towerManager : MonoBehaviour
         if (timer <= 0)
         {
             towers = towers +1;
+
+            audiosource.PlayOneShot(towerOnSound);
             
             if(towers == 3)
             {
@@ -103,9 +111,10 @@ public class towerManager : MonoBehaviour
                 if(momentM <= 0)
                 {
                     
-                    Debug.Log("tower2about to start");
+                   
                     particles2.Play();
                     momentM = momentM + timeBetweenSwitches;
+                    audiosource.PlayOneShot(towerWarning);
 
                 }
                 
@@ -123,9 +132,10 @@ public class towerManager : MonoBehaviour
 
                 if (momentM <= 0)
                 {
-                    Debug.Log("tower3abouttostart");
+                    
                     particles3.Play();
                     momentM = momentM + timeBetweenSwitches;
+                    audiosource.PlayOneShot(towerWarning);
                 }
 
 
@@ -143,9 +153,10 @@ public class towerManager : MonoBehaviour
 
                 if (momentM <= 0)
                 {
-                    Debug.Log("tower1abouttostart");
+                  
                     particles1.Play();
                     momentM = momentM + timeBetweenSwitches;
+                    audiosource.PlayOneShot(towerWarning);
                 }
 
 

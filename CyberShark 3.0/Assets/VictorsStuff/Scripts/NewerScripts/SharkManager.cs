@@ -30,6 +30,9 @@ public class SharkManager : MonoBehaviour
     [SerializeField] TrailRenderer backTrail2;
 
     private AudioSource audiosource;
+    [SerializeField] AudioClip enemyDeath;
+    [SerializeField] AudioClip losePart;
+    [SerializeField] AudioClip gainPart;
 
 
 
@@ -48,6 +51,7 @@ public class SharkManager : MonoBehaviour
         backTrail1.enabled = false;
         //backTrail2.enabled = false;
 
+        
         audiosource = GetComponent<AudioSource>();
 
     }
@@ -57,6 +61,7 @@ public class SharkManager : MonoBehaviour
     {
         AddMiddlePart();
         AddBackPart();
+
         
     }
 
@@ -73,7 +78,11 @@ public class SharkManager : MonoBehaviour
 
     public void AddScore(int scoreValue)
     {
-        //audiosource.PlayDelayed();
+        if (killCount != killCountForMiddlePart || killCount != killCountForBackPart)
+        {
+            audiosource.PlayOneShot(enemyDeath);
+        }
+        
 
         if (scoreText != null)
         {
@@ -117,6 +126,10 @@ public class SharkManager : MonoBehaviour
             headTrail.enabled = false;
             middleTrail.enabled = true;
 
+            audiosource.PlayOneShot(gainPart);
+
+            Debug.Log(killCountForMiddlePart);
+
         }
     }
 
@@ -135,6 +148,11 @@ public class SharkManager : MonoBehaviour
             middleTrail.enabled = false;
             backTrail1.enabled = true;
             //backTrail2.enabled = true;
+
+            audiosource.PlayOneShot(gainPart);
+
+
+            
         }
     }
 

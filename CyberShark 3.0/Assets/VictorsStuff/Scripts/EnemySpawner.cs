@@ -59,6 +59,12 @@ public class EnemySpawner : MonoBehaviour
            
         }
 
+        timeBeforeOctopus = timeBeforeOctopus - Time.deltaTime;
+        if(timeBeforeOctopus <=0)
+        {
+            SpawnOctopus();
+        }
+
     }
 
     void SpawnCrabs()
