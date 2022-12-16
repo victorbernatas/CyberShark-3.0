@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/VictorsStuff/Scenes/NewStart.unity
     guid: 1b5ebd0568d19724681f9eed02da8418
   - enabled: 1

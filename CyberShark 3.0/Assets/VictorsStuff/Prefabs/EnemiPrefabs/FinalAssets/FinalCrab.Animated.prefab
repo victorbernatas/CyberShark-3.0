@@ -633,10 +633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c0f1c647794c747a471b300341ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  isSlowed: 0
   normalSpeed: 2
+  slowedDownSpeed: 1
   normalRotationSpeed: 0
+  slowedDownRotationSpeed: 0
 --- !u!114 &1759823608
 MonoBehaviour:
   m_ObjectHideFlags: 0
